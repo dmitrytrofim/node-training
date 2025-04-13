@@ -4,7 +4,7 @@ const getData = {
 };
 
 async function test() {
- const resp = await fetch('http://localhost:3000/test', {
+ const resp = await fetch(`${location.href}test`, {
   method: 'POST',
   headers: {
    'Content-Type': 'application/json',
