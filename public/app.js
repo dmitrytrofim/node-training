@@ -1,3 +1,8 @@
+const getData = {
+ btn: document.querySelector('.get__btn'),
+ field: document.querySelector('.get__mes'),
+};
+
 async function test() {
  const resp = await fetch('http://localhost:3000/test', {
   method: 'POST',
@@ -8,8 +13,8 @@ async function test() {
  });
  if (resp.ok) {
   const json = await resp.json();
-  console.log(json);
+  getData.field.textContent = json;
  }
 }
 
-window.addEventListener('click', test);
+getData.btn.addEventListener('click', test);
